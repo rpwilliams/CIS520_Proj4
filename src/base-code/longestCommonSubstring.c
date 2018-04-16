@@ -58,7 +58,7 @@ void max_substring(char* str1, char* str2, int m, int n) {
 		temp[0] = str1[biggest_row];	
 		strcat(biggest, temp);
 		
-		/* Move to the next letter (top right) in the backwards substring */
+		/* Move to the next letter (top left) in the backwards substring */
 		biggest_row--;
 		biggest_col--;
 	}
