@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <omp.h>
 
 #define NUM_ENTRIES 100 // Should be 1000000
 #define ENTRY_LINE_SIZE 2003
@@ -88,6 +89,8 @@ void max_substring(int myID) {
 	int max_len; // The length of the biggest substring we've found
 	int table[LINE_LENGTH+1][LINE_LENGTH+1]; // 2D array to calculate biggest/most common substring
 
+	
+	 #pragma omp for private(str1,str2,startPos,endPos,m,n,i,biggest,temp,row,col,biggest_row,biggest_col,table) 
 	for(i = startPos; i < endPos && i < NUM_ENTRIES - 1; i++)
 	{
 		strcpy(str1, entries[i]);
