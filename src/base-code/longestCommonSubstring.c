@@ -2,30 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Constants */
 #define NUM_ENTRIES 100 // Should be 1000000
 #define ENTRY_LINE_SIZE 2003
 #define NUM_THREADS 4
 #define LINE_LENGTH 1000 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
+
+/* Global Variables */
 char entries[NUM_ENTRIES][LINE_LENGTH];
 
-// char wiki_entry[NUM_ENTRIES][ENTRY_LINE_SIZE];
-// char wiki_array[ARRAY_SIZE][STRING_SIZE];
-// char substrings[ARRAY_SIZE];
-
-
+/* Function prototypes */
 void max_substring(int myID);
 char *strrev(char *str);
 void read_file();
 
 
 void main() {
-	// char* str1 = "fkfokoabcccccc";
-	// char* str2 = "abccccccokojfifeiwh";
-	// char* str1 = "thisabcabacabcabcabcisatest";
-	// char* str2 = "testing123testing123abcabacabcabcabc";
-	// max_substring(str1, str2, strlen(str1), strlen(str2));
+	/* Read the file into the the list of entries */
 	read_file();
 	
+	/* Get the max substring of each line */
 	int i;
 	for(i = 0; i < NUM_THREADS; i++){
 		max_substring(i);
@@ -33,31 +29,25 @@ void main() {
 	
 }
 
+/* Read the file from wiki_dump.txt into the list of entries */
 void read_file() {
 	FILE *fp;
 	char str1[LINE_LENGTH];
 	fp = fopen("/homes/dan/625/wiki_dump.txt", "r");
 	//fp = fopen("test.txt", "r");
 
+	/* If the file could not be found, return */
 	if(fp == NULL) {
 		perror("Failed: ");
 		return;
 	}
 	
+	/* Add each line of the file into entries */
 	int i = 0;
 	while(fgets(str1, LINE_LENGTH, fp) != NULL && i < NUM_ENTRIES){
 		strcpy(entries[i], str1);
 		i++;
 	}
-
-	// while(fgets(str1, 1000, fp) != NULL) {
-	// 	printf("Str1: %s\nStr2: %s\n ", str1, str2);
-	// 	max_substring(str1, str2, strlen(str1), strlen(str2));
-	// }
-	// while(fgets(line, WIKI_STRING_SIZE, fp) != NULL) {
-	// 	// printf("Str1: %s\nStr2: %s\n ", str1, str2);
-	// 	// max_substring(str1, str2, strlen(str1), strlen(str2));
-	// }
 
 	fclose(fp);
 }
@@ -65,20 +55,13 @@ void read_file() {
 /* Find and prints the biggest AND most common substring between 2 str1 and str2.
    Code inspired by https://www.geeksforgeeks.org/longest-common-substring/ */
 void max_substring(int myID) {
-	// char temp2[10];
-	// char temp3[10];
-	// temp2[0] = str1[0];
-	// temp3[0] = str2[0];
-	// printf("str1[0]: %c\n", temp2[0]);
-	// printf("str2[0]: %c\n", temp2[0]);
-	
 	int startPos = myID * (NUM_ENTRIES / NUM_THREADS);
 	int endPos = startPos + (NUM_ENTRIES / NUM_THREADS);
 	//int startPos = 0;
 	//int endPos = NUM_ENTRIES;
 	
-	char str1[LINE_LENGTH];
-	char str2[LINE_LENGTH];
+	char str1[LINE_LENGTH]; // The first string we are comparing
+	char str2[LINE_LENGTH]; // The second string we are comparing
 	int m, n, i;
 	char biggest[LINE_LENGTH]; // The biggest/most common substring
 	char temp[LINE_LENGTH];
@@ -154,7 +137,6 @@ void max_substring(int myID) {
 
 			/* Print and reverse the biggest substring */
 			printf("%d-%d:, %s\n", i, i+1, strrev(biggest));
-			printf("***************\n");
 		}
 	}
 } 
