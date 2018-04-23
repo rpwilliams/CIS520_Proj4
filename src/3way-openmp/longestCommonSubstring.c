@@ -4,10 +4,10 @@
 #include <omp.h>
 
 /* Constants */
-#define NUM_ENTRIES 1000000 // Should be 1000000
+#define NUM_ENTRIES 100 // Should be 1000000
 #define ENTRY_LINE_SIZE 2003
 #define NUM_THREADS 4
-#define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
+#define LINE_LENGTH 1000 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 
 /* Global Variables */
 char entries[NUM_ENTRIES][LINE_LENGTH];
