@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <omp.h>
 
 /* Constants */
 #define NUM_ENTRIES 1000000 // Should be 1000000
