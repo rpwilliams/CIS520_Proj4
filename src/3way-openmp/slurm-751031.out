@@ -1,2 +1,0 @@
-/var/spool/slurm/d/job751031/slurm_script: line 4: 15797 Segmentation fault      /homes/rpwilliams96/CIS520_Proj4/src/3way-openmp/openmp-prod
-slurmstepd: error: Exceeded step memory limit at some point.
