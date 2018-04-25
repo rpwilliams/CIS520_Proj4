@@ -4,12 +4,13 @@
 #include <omp.h>
 
 /* Constants */
-#define NUM_ENTRIES 100 // Should be 1000000
+#define NUM_ENTRIES 1000000 // Should be 1000000
 #define NUM_THREADS 4
-#define LINE_LENGTH 1000 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
+#define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 
 /* Global Variables */
 char entries[NUM_ENTRIES][LINE_LENGTH];
+// int table[LINE_LENGTH+1][LINE_LENGTH+1];
 
 /* Function prototypes */
 void max_substring(int myID);
@@ -20,19 +21,28 @@ void main() {
 	/* Read the file into the the list of entries */
 	read_file();
 
-	omp_set_num_threads(NUM_THREADS);
+	// omp_set_num_threads(NUM_THREADS);
 	
 	/* Get the max substring of each line */
-	#pragma omp parallel
-	{
-		max_substring(omp_get_thread_num());
-	}
-	// int i;
-	// for(i = 0; i < NUM_THREADS; i++){
-	// 	max_substring(i);
+	// #pragma omp parallel
+	// {
+	// 	max_substring(omp_get_thread_num());
 	// }
+	int i;
+	for(i = 0; i < NUM_THREADS; i++){
+		max_substring(i);
+	}
 	
 }
+
+// void init_table(int m, int n) {
+// 	int i, j;
+// 	for(i = 0; i <= m ; i++) {
+// 		for(j = 0; j <= n; j++) {
+// 			table[i][j] = 0;
+// 		}
+// 	}
+// }
 
 
 /* Read the file from wiki_dump.txt into the list of entries */
@@ -40,7 +50,7 @@ void read_file() {
 	FILE *fp;
 	char str1[LINE_LENGTH];
 	fp = fopen("/homes/dan/625/wiki_dump.txt", "r");
-	//fp = fopen("test.txt", "r");
+	// fp = fopen("test.txt", "r");
 
 	/* If the file could not be found, return */
 	if(fp == NULL) {
@@ -63,10 +73,6 @@ void read_file() {
 void max_substring(int myID) {
 	int startPos = myID * (NUM_ENTRIES / NUM_THREADS);
 	int endPos = startPos + (NUM_ENTRIES / NUM_THREADS);
-
-	if(endPos == NUM_ENTRIES) {
-		endPos = endPos - 1;
-	}
 	
 	char str1[LINE_LENGTH];
 	char str2[LINE_LENGTH];
@@ -77,15 +83,32 @@ void max_substring(int myID) {
 	int row, col;
 	int biggest_row, biggest_col; // Index of the LAST letter of the biggest substring we've found
 	int max_len; // The length of the biggest substring we've found
-	int table[LINE_LENGTH+1][LINE_LENGTH+1]; // 2D array to calculate biggest/most common substring
+	// int table[LINE_LENGTH+1][LINE_LENGTH+1]; // 2D array to calculate biggest/most common substring
 
-	#pragma omp private(str1,str2,startPos,endPos,m,n,i,biggest,temp,row,col,biggest_row,biggest_col,table) 
-		for(i = startPos; i < endPos; i++)
+	// int** table;
+	// int* temp2;
+	// table = malloc(LINE_LENGTH * sizeof(int*));
+	// temp2 = malloc(LINE_LENGTH * LINE_LENGTH * sizeof(int));
+	// for(i = 0; i < LINE_LENGTH; i++) {
+	// 	table[i] = temp2 + (LINE_LENGTH * sizeof(int));
+	// }
+	// init_table(LINE_LENGTH, LINE_LENGTH);
+
+	#pragma omp private(str1,str2,startPos,endPos,m,n,i,biggest,temp,row,col,biggest_row,biggest_col) 
+		for(i = startPos; i < endPos && i < LINE_LENGTH; i++)
 		{
 			strcpy(str1, entries[i]);
 			strcpy(str2, entries[i+1]);
 			m = strlen(str1);
 			n = strlen(str2);
+
+
+			/* Allocate memory for a table */
+			int (*table)[n] = malloc(sizeof(int[m + 1][n + 1]));
+			// table = malloc((m * sizeof(int*)) + 1);
+			// for(i = 0; i < m; i++) {
+			// 	table[i] = malloc((n * sizeof(int)) + 1);
+			// }
 			
 			max_len = 0;
 			row =  0; 
@@ -127,16 +150,16 @@ void max_substring(int myID) {
 			else{
 				memset(biggest, '\0', LINE_LENGTH);
 				/* Starting at the bottom right of the biggest substring in the table, build biggest substring */
-				while(table[biggest_row][biggest_col] != 0) {
-					/* Convert the letter to a string, since strcat requires a string */				
+				while(table[biggest_row][biggest_col] != 1) {
+				// 	/* Convert the letter to a string, since strcat requires a string */				
 					memset(temp, '\0', LINE_LENGTH);
 					
 					temp[0] = str1[biggest_row];
-					//printf("str1[%d]: %c\n", biggest_row, str1[biggest_row]);	
-					/* Concatonate the string */
+				// 	// printf("str1[%d]: %c\n", biggest_row, str1[biggest_row]);	
+				// 	/* Concatonate the string */
 					strcat(biggest, temp);
 					
-					/* Move to the next letter (top left) in the backwards substring */
+				// 	/* Move to the next letter (top left) in the backwards substring */
 					biggest_row--;
 					biggest_col--;
 				}
@@ -145,8 +168,16 @@ void max_substring(int myID) {
 				/* Print and reverse the biggest substring */
 				printf("%d-%d:, %s\n", i, i+1, strrev(biggest));
 			}
+
+			/* Free the table */
+			free(table);
 		}
 	
+	// for(i = 0; i < LINE_LENGTH; i++) {
+	// 	free(table[i]);
+	// }
+	// free(temp2);
+	// free(table);
 } 
 
 /* Reverse a string
