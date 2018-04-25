@@ -4,10 +4,9 @@
 #include <omp.h>
 
 /* Constants */
-#define NUM_ENTRIES 1000000 // Should be 1000000
-#define ENTRY_LINE_SIZE 2003
+#define NUM_ENTRIES 100 // Should be 1000000
 #define NUM_THREADS 4
-#define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
+#define LINE_LENGTH 1000 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 
 /* Global Variables */
 char entries[NUM_ENTRIES][LINE_LENGTH];
@@ -20,12 +19,18 @@ void read_file();
 void main() {
 	/* Read the file into the the list of entries */
 	read_file();
+
+	omp_set_num_threads(NUM_THREADS);
 	
 	/* Get the max substring of each line */
-	int i;
-	for(i = 0; i < NUM_THREADS; i++){
-		max_substring(i);
+	#pragma omp parallel
+	{
+		max_substring(omp_get_thread_num());
 	}
+	// int i;
+	// for(i = 0; i < NUM_THREADS; i++){
+	// 	max_substring(i);
+	// }
 	
 }
 
@@ -58,6 +63,10 @@ void read_file() {
 void max_substring(int myID) {
 	int startPos = myID * (NUM_ENTRIES / NUM_THREADS);
 	int endPos = startPos + (NUM_ENTRIES / NUM_THREADS);
+
+	if(endPos == NUM_ENTRIES) {
+		endPos = endPos - 1;
+	}
 	
 	char str1[LINE_LENGTH];
 	char str2[LINE_LENGTH];
@@ -70,18 +79,14 @@ void max_substring(int myID) {
 	int max_len; // The length of the biggest substring we've found
 	int table[LINE_LENGTH+1][LINE_LENGTH+1]; // 2D array to calculate biggest/most common substring
 
-	
-	#pragma omp parallel private(str1,str2,startPos,endPos,m,n,i,biggest,temp,row,col,biggest_row,biggest_col,table) 
-	{
-		for(i = startPos; i < endPos && i < NUM_ENTRIES - 1; i++)
+	#pragma omp private(str1,str2,startPos,endPos,m,n,i,biggest,temp,row,col,biggest_row,biggest_col,table) 
+		for(i = startPos; i < endPos; i++)
 		{
 			strcpy(str1, entries[i]);
 			strcpy(str2, entries[i+1]);
-			
 			m = strlen(str1);
 			n = strlen(str2);
 			
-			int table[m+1][n+1]; // 2D array to calculate biggest/most common substring
 			max_len = 0;
 			row =  0; 
 			col = 0;
@@ -117,7 +122,7 @@ void max_substring(int myID) {
 			}
 
 			if(max_len == 0) {
-				printf("No common substring.");
+				printf("%d-%d:, %s\n", i, i+1, "No common substring.");
 			}
 			else{
 				memset(biggest, '\0', LINE_LENGTH);
@@ -141,7 +146,7 @@ void max_substring(int myID) {
 				printf("%d-%d:, %s\n", i, i+1, strrev(biggest));
 			}
 		}
-	}
+	
 } 
 
 /* Reverse a string
