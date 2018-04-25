@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in 1 2 4 8 16 32
+for i in 1 2 4 8 16 
 do
-	 sbatch --constraint=dwarves --ntasks-per-node=$i --nodes=1 --mem-per-cpu=16G --partition=killable.q openmp-sbatch.sh
+	 sbatch --constraint=elves --time=04:00:00 --ntasks-per-node=$i --nodes=1 --mem-per-cpu=$((16/$i))G --partition=killable.q openmp-sbatch.sh
 done
