@@ -1,0 +1,2 @@
+9388.04user 2.76system 19:40.07elapsed 795%CPU (0avgtext+0avgdata 2082196maxresident)k
+0inputs+87840outputs (0major+144861minor)pagefaults 0swaps

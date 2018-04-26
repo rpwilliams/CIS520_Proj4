@@ -4,7 +4,7 @@
 #include <omp.h>
 
 /* Constants */
-#define NUM_ENTRIES 1000000 // Should be 1000000
+#define NUM_ENTRIES 10000 // Should be 1000000
 #define NUM_THREADS 8
 #define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 
@@ -17,16 +17,34 @@ char *strrev(char *str);
 void read_file();
 
 void main() {
+	struct timeval t1, t2, t3, t4;
+	double elapsedTime;
+	int numSlots, myVersion = 2; // 1 = base, 2 = openmp, 3 = pthreads, 4 = mpi
+
+	gettimeofday(&t1, NULL);
 	/* Read the file into the the list of entries */
 	read_file();
+	gettimeofday(&t2, NULL);
 
 	omp_set_num_threads(NUM_THREADS);
 	
+	gettimeofday(&t3, NULL);
 	/* Get the max substring of each line */
 	#pragma omp parallel
 	{
 		max_substring(omp_get_thread_num());
 	}
+	gettimeofday(&t4, NULL);
+
+	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+	printf("Time to read file: %f\n", elapsedTime);
+
+	elapsedTime = (t4.tv_sec - t3.tv_sec) * 1000.0; //sec to ms
+	elapsedTime += (t4.tv_usec - t3.tv_usec) / 1000.0; // us to ms
+	printf("Time to get max substrings: %f\n", elapsedTime);
+
+	printf("DATA, %d, %s, %f\n", myVersion, getenv("SLURM_CPUS_ON_NODE"),  elapsedTime);
 }
 
 /* Read the file from wiki_dump.txt into the list of entries */
