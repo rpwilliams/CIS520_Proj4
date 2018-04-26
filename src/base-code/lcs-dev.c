@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
 
 /* Constants */
-#define NUM_ENTRIES 1000 // Should be 1000000
+#define NUM_ENTRIES 100 // Should be 1000000
 #define NUM_THREADS 8
 #define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 
@@ -17,7 +18,7 @@ void read_file();
 
 void main() {
 	/* Read the file into the the list of entries */
-	read_file();
+	read_file();	
 	
 	/* Get the max substring of each line */
 	int i;

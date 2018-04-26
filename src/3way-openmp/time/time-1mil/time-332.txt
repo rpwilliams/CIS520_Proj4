@@ -1,0 +1,2 @@
+9186.05user 3.26system 2:33:09elapsed 99%CPU (0avgtext+0avgdata 2082192maxresident)k
+0inputs+87840outputs (0major+2598888minor)pagefaults 0swaps
