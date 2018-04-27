@@ -20,7 +20,7 @@ void read_file();
 void main() {
 	struct timeval t1, t2, t3, t4;
 	double elapsedTime;
-	int numSlots, myVersion = 2; // 1 = base, 2 = openmp, 3 = pthreads, 4 = mpi
+	int numSlots, myVersion = 3; // 1 = base, 2 = openmp, 3 = pthreads, 4 = mpi
 	
 	int i, rc;
 	/* Create variables needed for pthreads */
@@ -37,16 +37,14 @@ void main() {
 	gettimeofday(&t2, NULL);
 	
 	gettimeofday(&t3, NULL);
-	
 	for (i = 0; i < NUM_THREADS; i++ ) {
 	  rc = pthread_create(&threads[i], &attr, max_substring, (void *)i);
 	  if (rc) {
 		printf("ERROR; return code from pthread_create() is %d\n", rc);
-	exit(-1);
+		exit(-1);
 	  }
 	}
 	
-	gettimeofday(&t4, NULL);
 	
 	/* Free attribute and wait for the other threads */
 	pthread_attr_destroy(&attr);
@@ -57,6 +55,7 @@ void main() {
 		   exit(-1);
 	     }
 	}
+	gettimeofday(&t4, NULL);
 	
 	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
