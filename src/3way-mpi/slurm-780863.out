@@ -1,0 +1,33 @@
+size = 2 rank = 0
+size = 2 rank = 1
+[elf78:42454] *** Process received signal ***
+[elf78:42454] Signal: Segmentation fault (11)
+[elf78:42454] Signal code: Address not mapped (1)
+[elf78:42454] Failing at address: 0x1dc07306e0
+[elf78:42454] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f8cb1da6270]
+[elf78:42454] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x4030a8]
+[elf78:42454] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ce7]
+[elf78:42454] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f8cb1d92c05]
+[elf78:42454] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf78:42454] *** End of error message ***
+[elf78:42455] *** Process received signal ***
+[elf78:42455] Signal: Segmentation fault (11)
+[elf78:42455] Signal code: Address not mapped (1)
+[elf78:42455] Failing at address: 0x1a9657336e0
+[elf78:42455] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fe3db930270]
+[elf78:42455] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x4030a8]
+[elf78:42455] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ce7]
+[elf78:42455] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fe3db91cc05]
+[elf78:42455] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf78:42455] *** End of error message ***
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[2242,1],1]
+  Exit code:    11
+--------------------------------------------------------------------------

@@ -1,0 +1,22 @@
+size = 1 rank = 0
+[elf78:18804] *** Process received signal ***
+[elf78:18804] Signal: Segmentation fault (11)
+[elf78:18804] Signal code: Address not mapped (1)
+[elf78:18804] Failing at address: 0x334113b4060
+[elf78:18804] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7efd21e75270]
+[elf78:18804] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf78:18804] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf78:18804] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7efd21e61c05]
+[elf78:18804] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf78:18804] *** End of error message ***
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[58384,1],0]
+  Exit code:    11
+--------------------------------------------------------------------------

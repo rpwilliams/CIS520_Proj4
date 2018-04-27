@@ -1,0 +1,12 @@
+//usr/bin/time: cannot run /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/openmp-10k: No such file or directory
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[52564,1],0]
+  Exit code:    127
+--------------------------------------------------------------------------

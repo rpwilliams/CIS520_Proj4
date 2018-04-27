@@ -1,0 +1,187 @@
+size = 16 rank = 1
+size = 16 rank = 2
+size = 16 rank = 3
+size = 16 rank = 4
+size = 16 rank = 5
+size = 16 rank = 6
+size = 16 rank = 7
+size = 16 rank = 9
+size = 16 rank = 10
+size = 16 rank = 11
+size = 16 rank = 12
+size = 16 rank = 13
+size = 16 rank = 14
+size = 16 rank = 15
+size = 16 rank = 0
+size = 16 rank = 8
+[elf77:34176] *** Process received signal ***
+[elf77:34176] Signal: Segmentation fault (11)
+[elf77:34176] Signal code: Address not mapped (1)
+[elf77:34176] Failing at address: 0xfffffec9695b6c70
+[elf77:34176] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f9be3afb270]
+[elf77:34176] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34176] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34176] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f9be3ae7c05]
+[elf77:34176] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34176] *** End of error message ***
+[elf77:34177] *** Process received signal ***
+[elf77:34177] Signal: Segmentation fault (11)
+[elf77:34177] Signal code: Address not mapped (1)
+[elf77:34177] Failing at address: 0xfffffcdb1c3c9970
+[elf77:34177] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f009f7ce270]
+[elf77:34177] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34177] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34177] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f009f7bac05]
+[elf77:34177] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34177] *** End of error message ***
+[elf77:34179] *** Process received signal ***
+[elf77:34179] Signal: Segmentation fault (11)
+[elf77:34179] Signal code: Address not mapped (1)
+[elf77:34179] Failing at address: 0xfffffd01844cbcf0
+[elf77:34179] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f257916f270]
+[elf77:34179] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34179] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34179] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f257915bc05]
+[elf77:34179] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34179] *** End of error message ***
+[elf77:34174] *** Process received signal ***
+[elf77:34174] Signal: Segmentation fault (11)
+[elf77:34174] Signal code: Address not mapped (1)
+[elf77:34174] Failing at address: 0xa22c34e070
+[elf77:34174] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fd885d28270]
+[elf77:34174] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34174] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34174] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd885d14c05]
+[elf77:34174] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34174] *** End of error message ***
+[elf77:34180] *** Process received signal ***
+[elf77:34180] Signal: Segmentation fault (11)
+[elf77:34180] Signal code: Address not mapped (1)
+[elf77:34180] Failing at address: 0xffffff0a1aad19f0
+[elf77:34180] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fd901849270]
+[elf77:34180] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34180] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34180] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd901835c05]
+[elf77:34180] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34180] *** End of error message ***
+[elf77:34181] *** Process received signal ***
+[elf77:34181] Signal: Segmentation fault (11)
+[elf77:34181] Signal code: Address not mapped (1)
+[elf77:34181] Failing at address: 0x10abca1ae70
+[elf77:34181] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fe3afea1270]
+[elf77:34181] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34181] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34181] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fe3afe8dc05]
+[elf77:34181] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34181] *** End of error message ***
+[elf77:34182] *** Process received signal ***
+[elf77:34182] Signal: Segmentation fault (11)
+[elf77:34182] Signal code: Address not mapped (1)
+[elf77:34182] Failing at address: 0xffffffb6d15619f0
+[elf77:34182] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fd74bff9270]
+[elf77:34182] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34182] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34182] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd74bfe5c05]
+[elf77:34182] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34182] *** End of error message ***
+[elf77:34185] *** Process received signal ***
+[elf77:34185] Signal: Segmentation fault (11)
+[elf77:34185] Signal code: Address not mapped (1)
+[elf77:34185] Failing at address: 0x3d9dc75e970
+[elf77:34185] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f961abaa270]
+[elf77:34185] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34185] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34185] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f961ab96c05]
+[elf77:34185] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34185] *** End of error message ***
+[elf77:34175] *** Process received signal ***
+[elf77:34175] Signal: Segmentation fault (11)
+[elf77:34175] Signal code: Address not mapped (1)
+[elf77:34175] Failing at address: 0x1720ef7edf0
+[elf77:34175] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f4386edf270]
+[elf77:34175] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34175] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34175] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f4386ecbc05]
+[elf77:34175] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34175] *** End of error message ***
+[elf77:34173] *** Process received signal ***
+[elf77:34173] Signal: Segmentation fault (11)
+[elf77:34173] Signal code: Address not mapped (1)
+[elf77:34173] Failing at address: 0xfffffd1be923a270
+[elf77:34173] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fe80de6b270]
+[elf77:34173] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34173] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34173] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fe80de57c05]
+[elf77:34173] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34173] *** End of error message ***
+[elf77:34184] *** Process received signal ***
+[elf77:34184] Signal: Segmentation fault (11)
+[elf77:34184] Signal code: Address not mapped (1)
+[elf77:34184] Failing at address: 0x30a98b45b70
+[elf77:34184] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f0e8ebaf270]
+[elf77:34184] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34184] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34184] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f0e8eb9bc05]
+[elf77:34184] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34184] *** End of error message ***
+[elf77:34187] *** Process received signal ***
+[elf77:34187] Signal: Segmentation fault (11)
+[elf77:34187] Signal code: Address not mapped (1)
+[elf77:34187] Failing at address: 0xfffffc6efb0596f0
+[elf77:34187] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fd57bf14270]
+[elf77:34187] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34187] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34187] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fd57bf00c05]
+[elf77:34187] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34187] *** End of error message ***
+[elf77:34189] *** Process received signal ***
+[elf77:34189] Signal: Segmentation fault (11)
+[elf77:34189] Signal code: Address not mapped (1)
+[elf77:34189] Failing at address: 0x341738ac2f0
+[elf77:34189] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f6081d58270]
+[elf77:34189] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34189] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34189] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f6081d44c05]
+[elf77:34189] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34189] *** End of error message ***
+[elf77:34191] *** Process received signal ***
+[elf77:34191] Signal: Segmentation fault (11)
+[elf77:34191] Signal code: Address not mapped (1)
+[elf77:34191] Failing at address: 0xfffffc9848fad070
+[elf77:34191] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fea0b2ad270]
+[elf77:34191] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34191] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34191] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fea0b299c05]
+[elf77:34191] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34191] *** End of error message ***
+[elf77:34192] *** Process received signal ***
+[elf77:34192] Signal: Segmentation fault (11)
+[elf77:34192] Signal code: Address not mapped (1)
+[elf77:34192] Failing at address: 0x211e327ae70
+[elf77:34192] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fe3c1cea270]
+[elf77:34192] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34192] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34192] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fe3c1cd6c05]
+[elf77:34192] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34192] *** End of error message ***
+[elf77:34183] *** Process received signal ***
+[elf77:34183] Signal: Segmentation fault (11)
+[elf77:34183] Signal code: Address not mapped (1)
+[elf77:34183] Failing at address: 0xfffffd5f260dbe70
+[elf77:34183] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f3ba7e41270]
+[elf77:34183] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf77:34183] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf77:34183] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f3ba7e2dc05]
+[elf77:34183] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf77:34183] *** End of error message ***
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[52226,1],11]
+  Exit code:    11
+--------------------------------------------------------------------------

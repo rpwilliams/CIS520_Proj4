@@ -1,0 +1,55 @@
+size = 4 rank = 0
+size = 4 rank = 1
+size = 4 rank = 2
+size = 4 rank = 3
+[elf07:38022] *** Process received signal ***
+[elf07:38022] Signal: Segmentation fault (11)
+[elf07:38022] Signal code: Address not mapped (1)
+[elf07:38022] Failing at address: 0xffffffde4b767fa0
+[elf07:38022] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fa44113d270]
+[elf07:38022] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf07:38022] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf07:38022] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fa441129c05]
+[elf07:38022] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf07:38022] *** End of error message ***
+[elf07:38021] *** Process received signal ***
+[elf07:38021] Signal: Segmentation fault (11)
+[elf07:38021] Signal code: Address not mapped (1)
+[elf07:38021] Failing at address: 0x28064c7fda0
+[elf07:38021] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7fc663805270]
+[elf07:38021] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf07:38021] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf07:38021] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fc6637f1c05]
+[elf07:38021] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf07:38021] *** End of error message ***
+[elf07:38027] *** Process received signal ***
+[elf07:38027] Signal: Segmentation fault (11)
+[elf07:38027] Signal code: Address not mapped (1)
+[elf07:38027] Failing at address: 0xfffffe382da649a0
+[elf07:38027] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f3fe40ba270]
+[elf07:38027] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf07:38027] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf07:38027] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f3fe40a6c05]
+[elf07:38027] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf07:38027] *** End of error message ***
+[elf07:38030] *** Process received signal ***
+[elf07:38030] Signal: Segmentation fault (11)
+[elf07:38030] Signal code: Address not mapped (1)
+[elf07:38030] Failing at address: 0x12e2019cba0
+[elf07:38030] [ 0] /usr/lib64/libc.so.6(+0x35270)[0x7f07cbfdc270]
+[elf07:38030] [ 1] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k(__intel_sse2_strcpy+0x8)[0x403198]
+[elf07:38030] [ 2] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401ceb]
+[elf07:38030] [ 3] /usr/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f07cbfc8c05]
+[elf07:38030] [ 4] /homes/mspicer60/CIS520_Proj4/src/3way-mpi/output/output-10k/mpi-10k[0x401a29]
+[elf07:38030] *** End of error message ***
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code.. Per user-direction, the job has been aborted.
+-------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[39477,1],2]
+  Exit code:    11
+--------------------------------------------------------------------------

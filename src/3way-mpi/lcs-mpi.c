@@ -12,10 +12,15 @@ int NUM_THREADS;
 /* Global Variables */
 char entries[NUM_ENTRIES][LINE_LENGTH];
 
+/* Results of the common subtring*/
+char* results_array[NUM_ENTRIES];
+char* local_results_array[NUM_ENTRIES];
+
 /* Function prototypes */
-void max_substring(int myID);
+void max_substring(void *rank);
 char *strrev(char *str);
 void read_file();
+//void init_arrays();
 
 void main(int argc, char* argv[]) {
 	struct timeval t1, t2, t3, t4;
@@ -42,6 +47,7 @@ void main(int argc, char* argv[]) {
 
 	gettimeofday(&t1, NULL);
 	if ( rank == 0 ) {
+		//init_arrays();
 		/* Read the file into the the list of entries */
 		read_file();
 	}
@@ -52,7 +58,7 @@ void main(int argc, char* argv[]) {
 	/* Get the max substring of each line */
 	max_substring(&rank);
 	gettimeofday(&t4, NULL);
-	MPI_Reduce(entries, entries, NUM_ENTRIES * LINE_LENGTH, MPI_CHAR, MPI_SUM, 0, MPI_COMM_WORLD);
+	MPI_Reduce(local_results_array, results_array, NUM_ENTRIES * LINE_LENGTH, MPI_CHAR, MPI_SUM, 0, MPI_COMM_WORLD);
 	
 	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
 	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
@@ -93,7 +99,9 @@ void read_file() {
 
 /* Find and prints the biggest AND most common substring between 2 str1 and str2.
    Code inspired by https://www.geeksforgeeks.org/longest-common-substring/ */
-void max_substring(int myID) {
+void max_substring(void *rank) {
+	int myID =  *((int*) rank);
+	
 	int startPos = myID * (NUM_ENTRIES / NUM_THREADS);
 	int endPos = startPos + (NUM_ENTRIES / NUM_THREADS);
 	
@@ -175,6 +183,7 @@ void max_substring(int myID) {
 
 				/* Print and reverse the biggest substring */
 				printf("%d-%d: %s\n", i, i+1, strrev(biggest));
+				local_results_array[i] = strrev(biggest);
 			}
 
 			/* Free the table */
@@ -198,3 +207,25 @@ char *strrev(char *str)
       }
       return str;
 }
+
+/*void init_arrays()
+{
+  int i, j; 
+
+  printf("Initializing arrays on %s.\n", getenv("HOSTNAME")); fflush(stdout);
+
+  for ( i = 0; i < NUM_ENTRIES; i++) {
+	for ( j = 0; j < LINE_LENGTH; j++ ) {
+		 entries[i][j] = 0;
+	}
+  }
+
+  for ( i = 0; i < NUM_ENTRIES; i++ ) {
+  	results_array[i] = 0;
+  }
+  
+  					// init local count array
+  for ( i = 0; i < NUM_ENTRIES; i++ ) {
+  	local_results_array[i] = 0;
+  }
+}*/
