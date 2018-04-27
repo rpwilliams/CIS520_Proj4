@@ -1,0 +1,2 @@
+4932.44user 2.02system 11:48.89elapsed 696%CPU (0avgtext+0avgdata 1104084maxresident)k
+0inputs+43720outputs (0major+285681minor)pagefaults 0swaps
