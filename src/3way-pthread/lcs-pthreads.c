@@ -18,6 +18,10 @@ char *strrev(char *str);
 void read_file();
 
 void main() {
+	struct timeval t1, t2, t3, t4;
+	double elapsedTime;
+	int numSlots, myVersion = 2; // 1 = base, 2 = openmp, 3 = pthreads, 4 = mpi
+	
 	int i, rc;
 	/* Create variables needed for pthreads */
 	pthread_t threads[NUM_THREADS];
@@ -27,8 +31,12 @@ void main() {
 	pthread_attr_init(&attr);
 	pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_JOINABLE);
 	
+	gettimeofday(&t1, NULL);
 	/* Read the file into the the list of entries */
 	read_file();
+	gettimeofday(&t2, NULL);
+	
+	gettimeofday(&t3, NULL);
 	
 	for (i = 0; i < NUM_THREADS; i++ ) {
 	  rc = pthread_create(&threads[i], &attr, max_substring, (void *)i);
@@ -37,6 +45,8 @@ void main() {
 	exit(-1);
 	  }
 	}
+	
+	gettimeofday(&t4, NULL);
 	
 	/* Free attribute and wait for the other threads */
 	pthread_attr_destroy(&attr);
@@ -47,6 +57,16 @@ void main() {
 		   exit(-1);
 	     }
 	}
+	
+	elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0; //sec to ms
+	elapsedTime += (t2.tv_usec - t1.tv_usec) / 1000.0; // us to ms
+	printf("Time to read file: %f\n", elapsedTime);
+
+	elapsedTime = (t4.tv_sec - t3.tv_sec) * 1000.0; //sec to ms
+	elapsedTime += (t4.tv_usec - t3.tv_usec) / 1000.0; // us to ms
+	printf("Time to get max substrings: %f\n", elapsedTime);
+
+	printf("DATA, %d, %s, %f\n", myVersion, getenv("SLURM_CPUS_ON_NODE"),  elapsedTime);
 	
 	pthread_mutex_destroy(&mutexsum);
 	pthread_exit(NULL);

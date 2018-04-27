@@ -1,4 +1,3 @@
 #!/bin/bash -l
-##$ -l h_rt=0:01:00
 
-/homes/rpwilliams96/CIS520_Proj4/src/3way-thread/pthreads-prod
+//usr/bin/time -o /homes/mspicer60/CIS520_Proj4/src/3way-pthread/time/time-$RANDOM.txt /homes/mspicer60/CIS520_Proj4/src/3way-pthread/pthreads-prod
