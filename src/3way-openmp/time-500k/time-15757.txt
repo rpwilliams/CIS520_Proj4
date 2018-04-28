@@ -1,0 +1,2 @@
+5031.21user 1.01system 1:23:54elapsed 99%CPU (0avgtext+0avgdata 1108196maxresident)k
+0inputs+43720outputs (0major+248267minor)pagefaults 0swaps

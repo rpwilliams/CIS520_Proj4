@@ -1,0 +1,2 @@
+3179.26user 5.02system 53:19.90elapsed 99%CPU (0avgtext+0avgdata 1993844maxresident)k
+0inputs+920outputs (1major+228596minor)pagefaults 0swaps

@@ -1,0 +1,2 @@
+102.01user 0.08system 0:35.04elapsed 291%CPU (0avgtext+0avgdata 147484maxresident)k
+0inputs+840outputs (0major+61257minor)pagefaults 0swaps

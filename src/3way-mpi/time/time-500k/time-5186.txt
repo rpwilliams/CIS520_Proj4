@@ -1,0 +1,2 @@
+1602.07user 11.25system 38:58.64elapsed 68%CPU (0avgtext+0avgdata 1149528maxresident)k
+1924352inputs+251296outputs (29909major+557546minor)pagefaults 0swaps

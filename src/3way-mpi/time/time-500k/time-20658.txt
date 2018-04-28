@@ -1,0 +1,2 @@
+2203.04user 3.82system 39:42.05elapsed 92%CPU (0avgtext+0avgdata 1014704maxresident)k
+0inputs+1768outputs (3major+32900minor)pagefaults 0swaps
