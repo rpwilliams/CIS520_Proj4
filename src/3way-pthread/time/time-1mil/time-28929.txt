@@ -1,0 +1,2 @@
+9602.86user 1.22system 1:20:05elapsed 199%CPU (0avgtext+0avgdata 2082112maxresident)k
+0inputs+87840outputs (0major+429339minor)pagefaults 0swaps

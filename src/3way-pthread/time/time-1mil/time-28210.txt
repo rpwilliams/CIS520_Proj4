@@ -1,0 +1,2 @@
+9602.01user 1.19system 1:20:02elapsed 199%CPU (0avgtext+0avgdata 2084012maxresident)k
+0inputs+87840outputs (0major+297758minor)pagefaults 0swaps

@@ -4,7 +4,7 @@
 #include <omp.h>
 
 /* Constants */
-#define NUM_ENTRIES 10000 // Should be 1000000
+#define NUM_ENTRIES 1000000 // Should be 1000000
 #define NUM_THREADS 8
 #define LINE_LENGTH 2003 //should be 2003, increasing to this size causes a segmentation fualt due to size of table.
 

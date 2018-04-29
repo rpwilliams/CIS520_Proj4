@@ -1,0 +1,2 @@
+5239.19user 5.56system 22:26.06elapsed 389%CPU (0avgtext+0avgdata 1104296maxresident)k
+0inputs+43720outputs (0major+2375912minor)pagefaults 0swaps
