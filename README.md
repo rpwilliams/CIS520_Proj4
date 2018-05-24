@@ -9,7 +9,7 @@ and MPI, then analyze the difference in performance between the 3 (which can be 
 
 * **Ryan Williams** - [rpwilliams](https://github.com/rpwilliams)
 * **Mark Spicer** - [mspicer60](https://github.com/mspicer60)
-* **Matt Heffel** - [mspicer60](https://github.com/mgheffel)
+* **Matt Heffel** - [mgheffel](https://github.com/mgheffel)
 
 ## Acknowledgments
 
